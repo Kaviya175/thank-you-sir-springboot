@@ -1,0 +1,418 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0d1117;
+    color: #00ff88;
+    font-family: monospace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal {
+    width: 600px;
+    min-height: 350px;
+    padding: 30px;
+
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.25);
+}
+
+.terminal p {
+    font-size: 18px;
+    margin: 14px 0;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 20px;
+
+    background: transparent;
+    color: #00ff88;
+
+    border: 1px solid #00ff88;
+    border-radius: 6px;
+
+    font-family: monospace;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00ff88;
+    color: #0d1117;
+}
+.message-screen {
+    text-align: center;
+    max-width: 700px;
+    padding: 40px;
+}
+
+.message-screen h1 {
+    font-size: 48px;
+}
+
+.message-screen p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+.message-screen h2 {
+    font-size: 36px;
+}
+
+.message-screen button {
+    margin-top: 30px;
+}
+
+.letter {
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.final-screen {
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+}
+
+.final-screen h1 {
+    font-size: 50px;
+}
+
+.code-box {
+    text-align: left;
+    background: #161b22;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    margin: 30px 0;
+}
+
+.code-box p {
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.indent {
+    margin-left: 30px;
+}
+
+.indent-more {
+    margin-left: 60px;
+}
+
+#terminal-output p {
+    white-space: pre-wrap;
+}
+.terminal-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+#cursor {
+    color: #00ff88;
+    font-size: 20px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+.particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particles span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #00ff88;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 8s infinite linear;
+}
+
+.particles span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(4) {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    from {
+        top: 100%;
+        transform: translateY(0);
+    }
+
+    to {
+        top: -10%;
+        transform: translateY(-100px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .terminal {
+        width: 85%;
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    .terminal-title {
+        font-size: 11px;
+    }
+
+    #terminal-output p {
+        font-size: 14px;
+    }
+
+    .terminal button {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .message-screen {
+        width: 85%;
+        padding: 20px;
+    }
+
+    .message-screen h1 {
+        font-size: 32px;
+    }
+
+    .message-screen p {
+        font-size: 18px;
+    }
+
+    .final-screen {
+        width: 85%;
+        padding: 20px;
+    }
+
+    .final-screen h1 {
+        font-size: 36px;
+    }
+
+    .code-box {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+}
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.screen-appear {
+    animation: screenAppear 1.2s ease-in-out;
+}
+
+@keyframes screenAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #00ff88;
+    width: 0;
+    animation:
+        typing 2s steps(20, end) forwards,
+        blink-caret 0.8s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #00ff88;
+    }
+}
+
+.memory-transition {
+    animation: memoryFade 0.8s ease-in-out;
+}
+
+@keyframes memoryFade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.letter-card {
+    width: min(850px, 90%);
+    max-height: 75vh;
+    overflow-y: auto;
+
+    padding: 45px;
+    margin: 20px auto;
+
+    background: rgba(22, 27, 34, 0.95);
+    border: 1px solid #30363d;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 136, 0.15),
+        inset 0 0 20px rgba(0, 255, 136, 0.03);
+
+    text-align: left;
+}
+.letter-card h1 {
+    text-align: center;
+    color: #00ff88;
+    margin-bottom: 35px;
+}
+.letter-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #d0d7de;
+    margin: 22px 0;
+}
+
+.letter-card blockquote {
+    margin: 30px 0;
+    padding: 20px 25px;
+
+    border-left: 4px solid #00ff88;
+
+    background: rgba(0, 255, 136, 0.05);
+
+    color: #00ff88;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.highlight-message {
+    margin: 40px 0;
+    padding: 25px;
+
+    text-align: center;
+
+    border-top: 1px solid #30363d;
+    border-bottom: 1px solid #30363d;
+}
+
+.highlight-message h2 {
+    color: #00ff88;
+    line-height: 1.6;
+}
+.signature {
+    text-align: right;
+    margin-top: 40px;
+    color: #8b949e;
+}
+
+.signature h3 {
+    color: #00ff88;
+  }
