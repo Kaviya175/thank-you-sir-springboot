@@ -163,22 +163,120 @@ function showMemoryThree() {
                 That is something we will always remember. ❤️
             </h2>
 
+           <button onclick="showTributeIntro()">
+               CONTINUE ❤️
+           </button>
+
+        </div>
+    `;
+
+}
+function showTributeIntro() {
+
+    document.body.innerHTML = `
+        <div class="message-screen screen-appear">
+
+            <h1>❤️ A Small Tribute ❤️</h1>
+
+            <div id="tributeText"></div>
+
+        </div>
+    `;
+
+    const lines = [
+        "Some teachers teach subjects.",
+        "Some teachers teach lessons.",
+        "But a few teachers leave a lasting impact on their students.",
+        "",
+        "You are one of them, Sir. ❤️"
+    ];
+
+    let index = 0;
+
+    function showNextLine() {
+
+        if (index < lines.length) {
+
+            const p = document.createElement("p");
+            p.innerText = lines[index];
+
+            document.getElementById("tributeText").appendChild(p);
+
+            index++;
+
+            setTimeout(showNextLine, 1500);
+
+        } else {
+
+            setTimeout(showPhotoGallery, 2000);
+
+        }
+
+    }
+
+    showNextLine();
+
+}
+
+function showPhotoGallery() {
+    window.scrollTo(0, 0);
+
+    document.body.style.display = "flex";
+    document.body.style.flexDirection = "column";
+    document.body.style.alignItems = "center";
+    document.body.style.justifyContent = "flex-start";
+    document.body.style.minHeight = "100vh";
+    document.body.style.padding = "30px 0";
+    document.body.style.overflowY = "auto";
+    document.body.innerHTML = `
+        <div class="message-screen screen-appear">
+
+            <h1>👨‍🏫 To Our Respected Teacher</h1>
+
+            <div class="photo-gallery">
+                <img src="images/photo1.jpeg" alt="Prasanna Kumar Mishra Sir">
+            </div>
+
+            <p class="photo-caption">
+                <strong>Prasanna Kumar Mishra Sir</strong>
+            </p>
+
+            <p class="photo-caption">
+                Every student's journey is shaped by someone
+                who believes in them even before they believe in themselves.
+                <br><br>
+                Thank you for your patience, guidance, discipline,
+                and for inspiring us to become better Java learners
+                and better professionals.
+                <br><br>
+                Your lessons will remain with us long after the classroom. ❤️
+            </p>
+
             <button onclick="showThankYouLetter()">
                 READ OUR LETTER 💌
             </button>
 
         </div>
     `;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
-function showThankYouLetter() {
 
+
+
+function showThankYouLetter() {
+    document.body.style.display = "flex";
+    document.body.style.height = "100vh";
+    document.body.style.overflowY = "hidden";
     document.body.innerHTML = `
         <div class="message-screen letter screen-appear">
 
             <div class="letter-card">
 
-            <h1>Dear Prasanna Mishra Kumar Sir, ❤️</h1>
+            <h1>Dear Prasanna Kumar Mishra Sir, ❤️</h1>
 
             <p>
                 You taught us much more than Java.
@@ -322,6 +420,17 @@ function showThankYouLetter() {
 }
 function showFinalMessage(result) {
 
+    window.scrollTo(0, 0);
+
+    document.body.style.display = "flex";
+    document.body.style.flexDirection = "column";
+    document.body.style.alignItems = "center";
+    document.body.style.justifyContent = "flex-start";
+    document.body.style.minHeight = "100vh";
+    document.body.style.height = "auto";
+    document.body.style.padding = "30px 0";
+    document.body.style.overflowY = "auto";
+
     document.body.innerHTML = `
         <div class="final-screen screen-appear">
 
@@ -432,3 +541,4 @@ async function executeJavaProgram() {
     }
 
 }
+

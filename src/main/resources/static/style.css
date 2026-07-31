@@ -1,13 +1,15 @@
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: #0d1117;
     color: #00ff88;
     font-family: monospace;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+
+    overflow-y: auto;
 }
 
 .terminal {
@@ -48,9 +50,10 @@ button:hover {
     color: #0d1117;
 }
 .message-screen {
+    width: min(700px, 90%);
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    max-width: 700px;
-    padding: 40px;
 }
 
 .message-screen h1 {
@@ -87,9 +90,10 @@ button:hover {
 }
 
 .final-screen {
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 30px;
     text-align: center;
-    max-width: 800px;
-    padding: 40px;
 }
 
 .final-screen h1 {
@@ -103,6 +107,9 @@ button:hover {
     border-radius: 10px;
     border: 1px solid #30363d;
     margin: 30px 0;
+
+    overflow-x: auto;
+    white-space: pre-wrap;
 }
 
 .code-box p {
@@ -416,3 +423,38 @@ button:hover {
 .signature h3 {
     color: #00ff88;
 }
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.photo-gallery img {
+    width: 240px;
+    height: 320px;
+
+    object-fit: cover;
+    object-position: top;
+
+    border: 4px solid #00ff88;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,255,136,0.3);
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.03);
+}
+.photo-caption {
+    max-width: 650px;
+    margin: 15px auto;
+    color: #d0d7de;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.message-screen h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+

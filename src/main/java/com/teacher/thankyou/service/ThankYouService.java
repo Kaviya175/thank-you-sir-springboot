@@ -1,7 +1,7 @@
 package com.teacher.thankyou.service;
 
-import com.teacher.thankyou.dto.ThankYouRequest;
-import com.teacher.thankyou.dto.ThankYouResponse;
+import com.teacher.thankyou.model.ThankYouRequest;
+import com.teacher.thankyou.model.ThankYouResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,14 +14,14 @@ public class ThankYouService {
 
             return new ThankYouResponse(
                     "PROGRAM EXECUTED SUCCESSFULLY ❤️",
-                    "Prasanna Mishra Kumar Sir",
+                    "Prasanna Kumar Mishra Sir",
                     "SUCCESS"
             );
         }
 
         return new ThankYouResponse(
                 "INVALID ACTION",
-                "Prasanna Mishra Kumar Sir",
+                "Prasanna Kumar Mishra Sir",
                 "FAILED"
         );
     }

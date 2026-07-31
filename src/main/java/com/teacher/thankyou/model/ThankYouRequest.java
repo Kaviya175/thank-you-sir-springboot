@@ -1,4 +1,4 @@
-package com.teacher.thankyou.dto;
+package com.teacher.thankyou.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
